@@ -1,4 +1,4 @@
-import MockChart from "features/mockChart";
+import MockCharts from "features/mockCharts";
 import "./index.scss";
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <main className="main_layout">
       <h1>Реализация квартир в строящихся домах в Российской Федерации</h1>
       <h2>Объем строящегося жилья в Российской Федерации</h2>
-      <MockChart />
+      <MockCharts />
     </main>
   );
 }

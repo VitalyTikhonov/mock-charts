@@ -1,0 +1,13 @@
+// .mock_charts {
+// }
+
+.mock_charts-chart_wrapper {
+  /* Не вкладываю в mock_charts - предпочитаю использовать вложение
+  только в пределах одного класса */
+  min-height: 300px;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
