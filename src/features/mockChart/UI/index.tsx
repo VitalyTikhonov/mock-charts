@@ -11,7 +11,6 @@ export default function MockChart() {
           data,
           primaryAxis,
           secondaryAxes,
-          initialHeight: 500,
         }}
       />
     </div>
