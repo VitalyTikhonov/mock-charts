@@ -6,3 +6,5 @@
 React (CRA), TypeScript, Feature-Slice Design
 
 Для реализации диаграмм используется библиотека React-Charts.
+
+Проект развернут [на платформе Vercel](https://mock-charts.vercel.app/).
