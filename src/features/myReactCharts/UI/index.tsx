@@ -1,9 +1,8 @@
 import { Chart } from "react-charts";
-import { lineData, barData } from "../constants";
+import { lineData, RCBarData } from "../../../shared/constants";
 import { primaryAxis, secondaryAxes, primaryAxisBar, secondaryAxesBar } from "../model";
-import "./index.scss";
 
-export default function MockCharts() {
+export default function MyReactCharts() {
   return (
     <div className="mock_charts">
       <div className="mock_charts-chart_wrapper">
@@ -19,9 +18,14 @@ export default function MockCharts() {
       <div className="mock_charts-chart_wrapper">
         <Chart
           options={{
-            data: barData,
+            data: RCBarData,
             primaryAxis: primaryAxisBar,
             secondaryAxes: secondaryAxesBar,
+            // onClickDatum: (datum, event) => {
+            //   console.log("datum", datum);
+            //   // console.log("event", event);
+            //   console.log("================================");
+            // },
           }}
         />
       </div>

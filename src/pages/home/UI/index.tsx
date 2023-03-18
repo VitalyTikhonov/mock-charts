@@ -1,4 +1,5 @@
-import MockCharts from "features/mockCharts";
+import MyReactCharts from "features/myReactCharts";
+import MyApexCharts from "features/myApexCharts";
 import "./index.scss";
 
 export default function Home() {
@@ -6,7 +7,8 @@ export default function Home() {
     <main className="main_layout">
       <h1>Реализация квартир в строящихся домах в Российской Федерации</h1>
       <h2>Объем строящегося жилья в Российской Федерации</h2>
-      <MockCharts />
+      <MyApexCharts />
+      <MyReactCharts />
     </main>
   );
 }

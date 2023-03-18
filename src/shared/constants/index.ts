@@ -3,12 +3,17 @@ export type RealEstateQuantity = {
   sqKmMillions: number;
 };
 
-type Series = {
+export type RCSeries = {
   label: string;
   data: RealEstateQuantity[];
 };
 
-const dates = [
+export type ApexSeries = {
+  name: string;
+  data: number[];
+};
+
+export const dates = [
   new Date(2020, 1, 1),
   new Date(2020, 2, 1),
   new Date(2020, 3, 1),
@@ -49,6 +54,10 @@ const dates = [
   new Date(2023, 2, 1),
 ];
 
+function makeData(numbers: number[]): RealEstateQuantity[] {
+  return dates.map((date, index) => ({ date, sqKmMillions: numbers[index] }));
+}
+
 const total = [
   107, 103, 101, 100, 100, 99, 99, 99, 99, 99, 99, 98, 94, 92, 92, 92, 94, 96, 98, 99, 99, 99, 99, 99, 96, 94, 95, 96,
   95, 96, 98, 99, 100, 101, 101, 101, 99, 97,
@@ -66,6 +75,10 @@ const soldDatum = {
   label: "Продано",
   data: makeData(sold),
 };
+const RCSoldDatum: ApexSeries = {
+  name: "Продано",
+  data: sold,
+};
 
 const nonSold = [
   38, 36, 35, 34, 31, 33, 33, 32, 32, 31, 30, 30, 29, 28, 28, 28, 28, 29, 30, 31, 32, 33, 34, 35, 35, 35, 36, 35, 35,
@@ -74,6 +87,10 @@ const nonSold = [
 const nonSoldDatum = {
   label: "Не продано (продажи открыты)",
   data: makeData(nonSold),
+};
+const RCNonSoldDatum: ApexSeries = {
+  name: "Не продано (продажи открыты)",
+  data: nonSold,
 };
 
 const notOnSale = [
@@ -84,10 +101,11 @@ const notOnSaleDatum = {
   label: "Продажи не открыты",
   data: makeData(notOnSale),
 };
+const RCNotOnSaleDatum: ApexSeries = {
+  name: "Продажи не открыты",
+  data: notOnSale,
+};
 
-function makeData(numbers: number[]): RealEstateQuantity[] {
-  return dates.map((date, index) => ({ date, sqKmMillions: numbers[index] }));
-}
-
-export const lineData: Series[] = [totalDatum, soldDatum, nonSoldDatum, notOnSaleDatum];
-export const barData: Series[] = [soldDatum, nonSoldDatum, notOnSaleDatum];
+export const lineData: RCSeries[] = [totalDatum, soldDatum, nonSoldDatum, notOnSaleDatum];
+export const RCBarData: RCSeries[] = [soldDatum, nonSoldDatum, notOnSaleDatum];
+export const apexBarData: ApexSeries[] = [RCSoldDatum, RCNonSoldDatum, RCNotOnSaleDatum];

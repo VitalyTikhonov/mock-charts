@@ -1,5 +1,5 @@
 import { AxisOptions } from "react-charts";
-import { RealEstateQuantity } from "../constants";
+import { RealEstateQuantity } from "../../../shared/constants";
 
 export const primaryAxis: AxisOptions<RealEstateQuantity> = {
   getValue: (datum) => datum.date,
